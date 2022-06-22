@@ -1,0 +1,65 @@
+<template>
+	<template if:true={pokemons.data}>
+		<div class="slds-grid slds-gutters slds-m-around_xxx-small">
+		
+        <div class="slds-col slds-size_1-of-3">
+			
+			<lightning-input type="search"
+			onchange={handleChange}
+			class="slds-var-m-bottom_small"
+			label ="Search"
+			placeholder="Search for pokemons"
+			value={name}>
+			</lightning-input>
+			
+		</div>
+		<div class="slds-col slds-size_1-of-3">
+            <lightning-combobox
+                data-id="generacion"
+                name="generacion"
+                label="Generacion:"
+                options={generationFilter}
+                value={generacion}
+                onchange={genChange}
+            ></lightning-combobox>
+        </div>
+		<div class="slds-col slds-size_1-of-3">
+            <lightning-combobox
+                data-id="tipo"
+                name="tipo"
+                label="Tipo/s:"
+                options={typeFilter}
+                value={tipo}
+                onchange={typeChange}
+            ></lightning-combobox>
+        </div>
+	</div>	
+	<div class="contador">Cantidad De Pokemones={pokemons.data.length}</div>
+	<div class="slds-grid slds-gutters">
+		
+		
+			<div class= "slds-grid slds-wrap slds-size_12-of-12">	
+				<template if:true={pokemons.data} for:each={pokemons.data} for:item="pokemon">
+					<div key= {pokemon} class="slds-size_2-of-12 slds-p-horizontal_small"  >
+						<c-poke-tile
+							pokemon = {pokemon}
+							onpokeview={handlePokeView}
+					  ></c-poke-tile>	
+					</div>
+						
+						
+					
+				</template>
+				
+			</div>
+		
+		
+		<!-- Data failed to load -->
+		<template if:true={error}>
+			<div class="slds-text-color_error">
+				An error occurred while loading the Pokemon list
+			</div>
+		</template>
+	</div>
+	</template>
+</template>

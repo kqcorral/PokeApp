@@ -1,0 +1,22 @@
+.caja {
+    border: 2px solid rgba(104, 8, 8, 0.3);
+    border-radius: 25px;
+    display: block;
+    background: -webkit-gradient(linear, 0 0,  0 100%, from(rgba(136, 133, 133, 0.596)), to(rgb(236, 164, 179)));
+    min-height: 240px;
+    margin: 3px;
+    padding: 5px 10px 10px;
+}
+.poke-foto {
+    height: 105px;
+}
+
+.title {
+    font-size: 16px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: 25px;
+}
+
+p {
+    font-size: 13px;
+}

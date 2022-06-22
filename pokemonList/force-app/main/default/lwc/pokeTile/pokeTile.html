@@ -1,0 +1,19 @@
+<template>
+    <div class="caja">
+        <div  class="slds-size_1-of-1 slds-text-align_center">
+            <p class="title"><br><b>{pokemon.Name} #{pokemon.PokeIndex__c}</b><br></p>
+        </div>
+        <div class="slds-media">
+            <div class="slds-media__figure" onclick={handleRecordClick}>
+                <img src={pokemon.Foto_URL__c} alt="Pokemon profile" class="poke-foto"/>
+            </div>
+            <div class="slds-media__body" >
+                <p class="slds-var-m-bottom_xx-small"><b>Poke Index:</b> {pokemon.PokeIndex__c}</p>
+                <p class="slds-var-m-bottom_xx-small"><b>Generación:</b> {pokemon.Generacion__c} </p>
+                <p class="slds-var-m-bottom_xx-small"><b>Altura:</b> {pokemon.Altura__c}</p>
+                <p class="slds-var-m-bottom_xx-small"><b>Peso:</b> {pokemon.Peso__c} </p>
+                <p class="slds-var-m-bottom_xx-small"><b>Tipo:</b> {pokemon.Tipo__c}</p>  
+            </div>
+        </div>
+        </div>  
+</template>
